@@ -25,8 +25,8 @@ namespace DependecyInjectionNamedExtensions.Example.Controllers
         {
             var array = new[] 
             { 
-                provider.GetService<IDataService, string>("DataServiceA").Get(),
-                provider.GetService<IDataService, string>("DataServiceB").Get()
+                provider.GetService<IDataService, int>(key => key == 0).Get(),
+                provider.GetService<IDataService, int>(1).Get()
             };
             return array;
         }

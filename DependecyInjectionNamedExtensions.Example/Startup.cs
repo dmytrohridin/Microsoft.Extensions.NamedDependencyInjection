@@ -26,8 +26,8 @@ namespace DependecyInjectionNamedExtensions.Example
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IDataService, DataServiceA, string>(p => new DataServiceA(), $"{nameof(DataServiceA)}");
-            services.AddTransient(p => new DataServiceB(), $"{nameof(DataServiceB)}");
+            services.AddTransient<IDataService, DataServiceA, int>(0);
+            services.AddTransient<IDataService, DataServiceB, int>(1);
             services.AddControllers();
         }
 

@@ -1,5 +1,11 @@
 ﻿namespace DependecyInjectionNamedExtensions.Example.Services
 {
+    public enum ServiceTypeDescription
+    {
+        DataServiceA,
+        DataServiceB
+    }
+
     public interface IDataService
     {
         string Get();

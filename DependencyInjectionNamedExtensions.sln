@@ -3,19 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{37B52051-D187-4E02-8C20-9812276007F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependecyInjectionNamedExtensions", "src\DependecyInjectionNamedExtensions\DependecyInjectionNamedExtensions.csproj", "{623E656A-0DC1-4069-A9AD-3F87DD99D8F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{30AC7D66-A253-4EDC-88A5-64918F04A987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependecyInjectionNamedExtensions.Example", "examples\DependecyInjectionNamedExtensions.Example\DependecyInjectionNamedExtensions.Example.csproj", "{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{E3D6D02B-C0B2-4C56-9A7A-B0D04C5C5B2F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{2CBD9BCE-8AD2-4042-9584-31B0AF342D0E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependecyInjectionNamedExtensions", "DependecyInjectionNamedExtensions\DependecyInjectionNamedExtensions.csproj", "{623E656A-0DC1-4069-A9AD-3F87DD99D8F0}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependecyInjectionNamedExtensions.Example", "DependecyInjectionNamedExtensions.Example\DependecyInjectionNamedExtensions.Example.csproj", "{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependecyInjectionNamedExtensions.Tests", "DependecyInjectionNamedExtensions.Tests\DependecyInjectionNamedExtensions.Tests.csproj", "{6D46F885-041F-439F-81B7-4AD7416D0419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependecyInjectionNamedExtensions.Tests", "tests\DependecyInjectionNamedExtensions.Tests\DependecyInjectionNamedExtensions.Tests.csproj", "{6D46F885-041F-439F-81B7-4AD7416D0419}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,11 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{623E656A-0DC1-4069-A9AD-3F87DD99D8F0} = {37B52051-D187-4E02-8C20-9812276007F9}
-		{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42} = {E3D6D02B-C0B2-4C56-9A7A-B0D04C5C5B2F}
-		{6D46F885-041F-439F-81B7-4AD7416D0419} = {30AC7D66-A253-4EDC-88A5-64918F04A987}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FE4FA7FF-14F6-48B3-AE56-E3BBF95C0346}

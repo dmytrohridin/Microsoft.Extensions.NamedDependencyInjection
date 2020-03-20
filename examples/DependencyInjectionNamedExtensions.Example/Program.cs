@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace DependecyInjectionNamedExtensions.Example
+namespace DependencyInjectionNamedExtensions.Example
 {
     public class Program
     {

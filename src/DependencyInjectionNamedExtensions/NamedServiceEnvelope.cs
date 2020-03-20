@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DependecyInjectionNamedExtensions
+namespace DependencyInjectionNamedExtensions
 {
     internal class NamedServiceEnvelope<TKey, TService> : 
         INamedServiceEnvelope<TKey, TService>

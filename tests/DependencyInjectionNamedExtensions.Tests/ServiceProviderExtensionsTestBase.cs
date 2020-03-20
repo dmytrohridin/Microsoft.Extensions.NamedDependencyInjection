@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace DependecyInjectionNamedExtensions.Tests
+namespace DependencyInjectionNamedExtensions.Tests
 {
     public abstract class ServiceProviderExtensionsTestBase : IDisposable
     {

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>DependencyInjectionNamedExtensions.Example</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,9 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="DependecyInjectionNamedExtensions">
-      <HintPath>..\..\src\DependecyInjectionNamedExtensions\bin\Debug\netstandard2.0\DependecyInjectionNamedExtensions.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\src\DependencyInjectionNamedExtensions\DependencyInjectionNamedExtensions.csproj" />
   </ItemGroup>
 
 </Project>

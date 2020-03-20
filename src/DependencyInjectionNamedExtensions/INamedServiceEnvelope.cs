@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DependecyInjectionNamedExtensions
+namespace DependencyInjectionNamedExtensions
 {
     internal interface INamedServiceEnvelope<TKey>
     {

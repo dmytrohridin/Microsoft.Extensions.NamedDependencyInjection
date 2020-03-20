@@ -1,4 +1,4 @@
-﻿namespace DependecyInjectionNamedExtensions.Example.Services
+﻿namespace DependencyInjectionNamedExtensions.Example.Services
 {
     public enum ServiceTypeDescription
     {

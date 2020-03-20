@@ -1,4 +1,4 @@
-﻿namespace DependecyInjectionNamedExtensions.Tests
+﻿namespace DependencyInjectionNamedExtensions.Tests
 {
     public static class DummyServiceConstants
     {

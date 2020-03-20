@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DependecyInjectionNamedExtensions.Example.Services;
+using DependencyInjectionNamedExtensions.Example.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DependecyInjectionNamedExtensions.Example.Controllers
+namespace DependencyInjectionNamedExtensions.Example.Controllers
 {
     [ApiController]
     [Route("[controller]")]

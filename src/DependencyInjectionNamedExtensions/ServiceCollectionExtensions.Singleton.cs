@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DependecyInjectionNamedExtensions
+namespace DependencyInjectionNamedExtensions
 {
     public static partial class ServiceCollectionExtensions
     {

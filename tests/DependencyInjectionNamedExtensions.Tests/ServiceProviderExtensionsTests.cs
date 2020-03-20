@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace DependecyInjectionNamedExtensions.Tests
+namespace DependencyInjectionNamedExtensions.Tests
 {
     public class ServiceProviderExtensionsTests : ServiceProviderExtensionsTestBase
     {

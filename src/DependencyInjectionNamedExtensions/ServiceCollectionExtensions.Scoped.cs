@@ -13,7 +13,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key)
         {
             services.AddScoped<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, object>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     p => p.GetServices(serviceType).FirstOrDefault(s => s.GetType() == implementationType)));
 
@@ -28,7 +28,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key)
         {
             services.AddScoped<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, object>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
 
@@ -42,7 +42,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key) where TService : class
         {
             services.AddScoped<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key, 
                     implementationFactory));
             services.AddScoped(implementationFactory);
@@ -55,7 +55,7 @@ namespace DependencyInjectionNamedExtensions
                       where TImplementation : class, TService
         {
             services.AddScoped<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     (p) => p.GetServices<TService>().FirstOrDefault(s => s.GetType() == typeof(TImplementation))));
 
@@ -71,7 +71,7 @@ namespace DependencyInjectionNamedExtensions
             where TImplementation : class, TService
         {
             services.AddScoped<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
             services.AddScoped<TService, TImplementation>(implementationFactory);

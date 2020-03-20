@@ -16,7 +16,7 @@ namespace DependencyInjectionNamedExtensions
             where TImplementation : class, TService
         {
             services.AddSingleton<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
             services.AddSingleton<TService, TImplementation>(implementationFactory);
@@ -29,7 +29,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key) where TService : class
         {
             services.AddSingleton<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
 
@@ -43,7 +43,7 @@ namespace DependencyInjectionNamedExtensions
                       where TImplementation : class, TService
         {
             services.AddSingleton<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     (p) => p.GetServices<TService>().FirstOrDefault(s => s.GetType() == typeof(TImplementation))));
 
@@ -58,7 +58,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key)
         {
             services.AddSingleton<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, object>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
 
@@ -73,7 +73,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key)
         {
             services.AddSingleton<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, object>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     p => p.GetServices(serviceType).FirstOrDefault(s => s.GetType() == implementationType)));
 
@@ -87,7 +87,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key) where TService : class
         {
             services.AddSingleton<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     _ => implementationInstance));
 
@@ -102,7 +102,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key)
         {
             services.AddSingleton<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, object>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     _ => implementationInstance));
 

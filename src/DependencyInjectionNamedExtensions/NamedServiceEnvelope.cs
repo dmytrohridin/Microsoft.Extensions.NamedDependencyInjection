@@ -2,19 +2,16 @@
 
 namespace DependencyInjectionNamedExtensions
 {
-    internal class NamedServiceEnvelope<TKey, TService> : 
-        INamedServiceEnvelope<TKey, TService>
+    internal class NamedServiceEnvelope<TKey> : 
+        INamedServiceEnvelope<TKey>
     {
         public TKey Key { get; }
 
-        public Func<IServiceProvider, TService> ImplementationFactory { get; }
-
-        Func<IServiceProvider, object> INamedServiceEnvelope<TKey>.ImplementationFactory => 
-             ImplementationFactory as Func<IServiceProvider, object>;
+        public Func<IServiceProvider, object> ImplementationFactory { get; }
 
         public NamedServiceEnvelope(
             TKey key,
-            Func<IServiceProvider, TService> implementationFactory) =>
+            Func<IServiceProvider, object> implementationFactory) =>
                 (Key, ImplementationFactory) = (key, implementationFactory);
     }
 }

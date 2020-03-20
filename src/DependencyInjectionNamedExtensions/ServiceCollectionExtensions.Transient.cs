@@ -14,7 +14,7 @@ namespace DependencyInjectionNamedExtensions
             where TImplementation : class, TService
         {
             services.AddTransient<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
             
@@ -28,7 +28,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key) where TService : class
         {
             services.AddTransient<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
             services.AddTransient(implementationFactory);
@@ -42,7 +42,7 @@ namespace DependencyInjectionNamedExtensions
             where TImplementation : class, TService
         {
             services.AddTransient<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, TService>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     p => p.GetServices<TService>().FirstOrDefault(s => s.GetType() == typeof(TImplementation))));
 
@@ -57,7 +57,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key)
         {
             services.AddTransient<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, object>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     implementationFactory));
             services.AddTransient(serviceType, implementationFactory);
@@ -71,7 +71,7 @@ namespace DependencyInjectionNamedExtensions
             TKey key)
         {
             services.AddTransient<INamedServiceEnvelope<TKey>>(
-                provider => new NamedServiceEnvelope<TKey, object>(
+                provider => new NamedServiceEnvelope<TKey>(
                     key,
                     p => p.GetServices(serviceType).FirstOrDefault(s => s.GetType() == implementationType)));
             services.AddTransient(serviceType, implementationType);

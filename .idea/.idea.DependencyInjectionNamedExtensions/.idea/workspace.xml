@@ -33,6 +33,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/DependencyInjectionNamedExtensions/ServiceProviderExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/tests/DependencyInjectionNamedExtensions.Tests/ServiceCollectionExtensionsScopedTests.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,10 +57,17 @@
       </list>
     </option>
   </component>
+  <component name="ProjectId" id="1ZP0JMCaYEQC3c6ro8HNwt5Ewe5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.3" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.DependecyInjectionNamedExtensions.Example">
     <configuration name="DependecyInjectionNamedExtensions.Example" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -101,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584724277456</updated>
-      <workItem from="1584724281947" duration="794000" />
+      <workItem from="1584724281947" duration="930000" />
     </task>
     <servers />
   </component>

@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build and test:
 
     runs-on: windows-latest
 
@@ -19,3 +19,6 @@ jobs:
         dotnet-version: 3.1.101
     - name: Build with dotnet
       run: dotnet build --configuration Release
+    - name: Test with dotnet
+      run: dotnet test --configuration Release
+    

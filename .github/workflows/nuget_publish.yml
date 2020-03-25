@@ -22,11 +22,6 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: DependencyInjectionNamedExtensions
-        path: ./src/DependencyInjectionNamedExtensions/bin/Release/AspNetMonsters.ApplicationInsights.AspNetCore.${{ github.event.release.tag_name }}.nupkg
-    - name: Archive NuGet Package
-      uses: actions/upload-artifact@v1
-      with:
-        name: DependencyInjectionNamedExtensions
         path: ./src/DependencyInjectionNamedExtensions/bin/Release/DependencyInjectionNamedExtensions.${{ github.event.release.tag_name }}.nupkg
     - name: Publish Nuget Package
       run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_DEPLOY_KEY }} --source https://api.nuget.org/v3/index.json --no-symbols true

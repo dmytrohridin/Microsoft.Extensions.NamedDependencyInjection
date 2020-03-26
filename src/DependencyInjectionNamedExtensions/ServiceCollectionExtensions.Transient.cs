@@ -16,6 +16,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddTransient<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    typeof(TService),
                     implementationFactory));
             
             services.AddTransient<TService, TImplementation>(implementationFactory);
@@ -30,6 +31,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddTransient<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    typeof(TService),
                     implementationFactory));
             services.AddTransient(implementationFactory);
             return services;
@@ -44,6 +46,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddTransient<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    typeof(TService),
                     p => p.GetServices<TService>().FirstOrDefault(s => s.GetType() == typeof(TImplementation))));
 
             services.AddTransient<TService, TImplementation>();
@@ -59,6 +62,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddTransient<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    serviceType,
                     implementationFactory));
             services.AddTransient(serviceType, implementationFactory);
             return services;
@@ -73,6 +77,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddTransient<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    serviceType,
                     p => p.GetServices(serviceType).FirstOrDefault(s => s.GetType() == implementationType)));
             services.AddTransient(serviceType, implementationType);
             return services;

@@ -15,6 +15,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddScoped<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    serviceType,
                     p => p.GetServices(serviceType).FirstOrDefault(s => s.GetType() == implementationType)));
 
             services.AddScoped(serviceType, implementationType);
@@ -30,6 +31,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddScoped<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    serviceType,
                     implementationFactory));
 
             services.AddScoped(serviceType, implementationFactory);
@@ -43,7 +45,8 @@ namespace DependencyInjectionNamedExtensions
         {
             services.AddScoped<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
-                    key, 
+                    key,
+                    typeof(TService),
                     implementationFactory));
             services.AddScoped(implementationFactory);
             return services;
@@ -57,6 +60,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddScoped<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    typeof(TService),
                     (p) => p.GetServices<TService>().FirstOrDefault(s => s.GetType() == typeof(TImplementation))));
 
             services.AddScoped<TService, TImplementation>();
@@ -73,6 +77,7 @@ namespace DependencyInjectionNamedExtensions
             services.AddScoped<INamedServiceEnvelope<TKey>>(
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
+                    typeof(TService),
                     implementationFactory));
             services.AddScoped<TService, TImplementation>(implementationFactory);
             return services;

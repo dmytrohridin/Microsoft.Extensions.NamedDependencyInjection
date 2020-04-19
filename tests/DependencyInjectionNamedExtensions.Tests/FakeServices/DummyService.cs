@@ -26,4 +26,19 @@
     {
         public string GetServiceName() => nameof(DummyServiceB);
     }
+
+    public interface IAnotherDummyService 
+    {
+        bool ValidateService();
+    }
+
+    public class AnotherDummyServiceA : IAnotherDummyService
+    {
+        public bool ValidateService() => true;
+    }
+
+    public class AnotherDummyServiceB : IAnotherDummyService
+    {
+        public bool ValidateService() => false;
+    }
 }

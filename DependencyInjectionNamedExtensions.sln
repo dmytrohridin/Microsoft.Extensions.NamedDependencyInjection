@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionNamedExtensions", "src\DependencyInjectionNamedExtensions\DependencyInjectionNamedExtensions.csproj", "{623E656A-0DC1-4069-A9AD-3F87DD99D8F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionNamedExtensions.Example", "examples\DependencyInjectionNamedExtensions.Example\DependencyInjectionNamedExtensions.Example.csproj", "{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionNamedExtensions.Tests", "tests\DependencyInjectionNamedExtensions.Tests\DependencyInjectionNamedExtensions.Tests.csproj", "{6D46F885-041F-439F-81B7-4AD7416D0419}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{623E656A-0DC1-4069-A9AD-3F87DD99D8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{623E656A-0DC1-4069-A9AD-3F87DD99D8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{623E656A-0DC1-4069-A9AD-3F87DD99D8F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF5D76D6-AEA0-4E88-AB68-E2C6A011DD42}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D46F885-041F-439F-81B7-4AD7416D0419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D46F885-041F-439F-81B7-4AD7416D0419}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D46F885-041F-439F-81B7-4AD7416D0419}.Release|Any CPU.ActiveCfg = Release|Any CPU

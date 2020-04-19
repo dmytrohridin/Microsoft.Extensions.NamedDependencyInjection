@@ -16,7 +16,9 @@ namespace DependencyInjectionNamedExtensions
                 provider => new NamedServiceEnvelope<TKey>(
                     key,
                     serviceType,
-                    p => p.GetServices(serviceType).FirstOrDefault(s => s.GetType() == implementationType)));
+                    p => p
+                        .GetServices(serviceType)
+                        .FirstOrDefault(s => s.GetType() == implementationType)));
 
             services.AddScoped(serviceType, implementationType);
             return services;

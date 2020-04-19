@@ -28,7 +28,7 @@ namespace DependencyInjectionNamedExtensions
         /// Constructor
         /// </summary>
         /// <param name="key">Key</param>
-        /// <param name="serviceType">Service type<</param>
+        /// <param name="serviceType">Service type</param>
         /// <param name="implementationFactory">Implementation factory</param>
         public NamedServiceEnvelope(
             TKey key,

@@ -37,7 +37,7 @@ var eventBus = serviceProvider.GetService<IEventBus, string>(eventBusKey);
 Not only ```string``` can be used as type for key parameter. All extensions is parameterized, so ```Enum```, ```Guid``` or another types can be used as key.  
 
 ## Dependencies
-This extensions is build with .NET Standart 2.0 and depends on [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) starting from version 3.1.2.
+This extensions are built with .NET Standart 2.0 and depends on [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) starting from version 3.1.2.
 
 ## Q&A
 If you have any questions or proposals - please create issue or PR. 

@@ -25,7 +25,7 @@ var eventBus = serviceProvider.GetService<IEventBus, string>(eventBusKey);
 ```
 
 ## Dependencies
-This extensions is build on .NET Standart 2.0 and depends on [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) starting from version 3.1.3.
+This extensions is build with .NET Standart 2.0 and depends on [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) starting from version 3.1.3.
 
 ## Q&A
 If you have any questions or proposals - please create issue or PR. 

@@ -7,7 +7,7 @@ Extensions for [.NET Core](https://github.com/dotnet/extensions/) Dependency Inj
 
 Current implementation of .NET Core Dependency Injection container does not support registration and resolving dependencies by name or key.
 
-## Instalation
+## Installation
 
 TODO: Add description after final nuget package will be ready
 

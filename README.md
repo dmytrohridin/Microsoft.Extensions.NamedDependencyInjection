@@ -1,6 +1,5 @@
 # .NET Core Dependency Injection Named Extensions
-Extensions for .NET Core Dependency Injection container, that allow to resolve dependencies by key
-
+Extensions for [.NET Core](https://github.com/dotnet/extensions/) Dependency Injection container, that allow to resolve dependencies by key. 
 ![.NET Core](https://github.com/dmytrohridin/DependencyInjectionNamedExtensions/workflows/.NET%20Core/badge.svg?branch=master)
 
 ## Why?
@@ -24,4 +23,8 @@ Inject ```IServiceProvider``` interface where you need to resolve dependency and
 var eventBus = serviceProvider.GetService<IEventBus, string>(eventBusKey);
 ```
 
-## Supported versions
+## Dependencies
+This extensions is build on .NET Standart 2.0 and depends on [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) starting from version 3.1.3.
+
+## Q&A
+If you have any questions or proposals - please create issue or PR. 

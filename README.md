@@ -24,6 +24,9 @@ Inject ```IServiceProvider``` interface where you need to resolve dependency and
 var eventBus = serviceProvider.GetService<IEventBus, string>(eventBusKey);
 ```
 
+### Note
+Not only ```string``` can be used as type for key parameter. All extensions is parameterized, so ```Enum```, ```Guid``` or another types can be used as key.  
+
 ## Dependencies
 This extensions is build with .NET Standart 2.0 and depends on [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) starting from version 3.1.3.
 

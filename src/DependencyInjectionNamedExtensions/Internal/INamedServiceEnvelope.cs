@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DependencyInjectionNamedExtensions
+namespace DependencyInjectionNamedExtensions.Internal
 {
     /// <summary>
     /// Interface that describe key and service factory that should be resolved by key

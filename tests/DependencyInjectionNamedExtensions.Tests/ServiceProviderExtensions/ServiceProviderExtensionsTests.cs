@@ -7,11 +7,23 @@ namespace DependencyInjectionNamedExtensions.Tests.ServiceProviderExtensions
     [Trait("Category", "ServiceProviderExtensions")]
     public class ServiceProviderExtensionsTests : IDisposable
     {
-        private IServiceProvider serviceProvider;
+        private readonly IServiceProvider serviceProvider;
 
         public ServiceProviderExtensionsTests()
         {
-            RegisterServices();
+            var services = new ServiceCollection();
+
+            services
+                .AddScoped<IDummyService, DummyServiceA, string>(DummyServiceConstants.DummyServiceAKey);
+            services
+                .AddScoped<IDummyService, DummyServiceB, string>(DummyServiceConstants.DummyServiceBKey);
+
+            services
+                .AddScoped<IAnotherDummyService, AnotherDummyServiceA, string>(DummyServiceConstants.DummyServiceAKey);
+            services
+                .AddScoped<IAnotherDummyService, AnotherDummyServiceB, string>(DummyServiceConstants.DummyServiceBKey);
+
+            serviceProvider = services.BuildServiceProvider();
         }
 
         [Fact]
@@ -155,23 +167,6 @@ namespace DependencyInjectionNamedExtensions.Tests.ServiceProviderExtensions
             Assert.NotNull(serviceB as DummyServiceB);
             Assert.NotNull(anotherServiceA as AnotherDummyServiceA);
             Assert.NotNull(anotherServiceB as AnotherDummyServiceB);
-        }
-
-        private void RegisterServices()
-        {
-            var services = new ServiceCollection();
-
-            services
-                .AddScoped<IDummyService, DummyServiceA, string>(DummyServiceConstants.DummyServiceAKey);
-            services
-                .AddScoped<IDummyService, DummyServiceB, string>(DummyServiceConstants.DummyServiceBKey);
-
-            services
-                .AddScoped<IAnotherDummyService, AnotherDummyServiceA, string>(DummyServiceConstants.DummyServiceAKey);
-            services
-                .AddScoped<IAnotherDummyService, AnotherDummyServiceB, string>(DummyServiceConstants.DummyServiceBKey);
-
-            serviceProvider = services.BuildServiceProvider();
         }
 
         public void Dispose() => 

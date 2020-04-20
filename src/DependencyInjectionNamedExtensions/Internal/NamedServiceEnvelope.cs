@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace DependencyInjectionNamedExtensions
+namespace DependencyInjectionNamedExtensions.Internal
 {
     /// <summary>
     /// Class that describe key and service factory that should be resolved by key
     /// </summary>
     /// <typeparam name="TKey">Type of key</typeparam>
-    internal class NamedServiceEnvelope<TKey> : 
+    internal class NamedServiceEnvelope<TKey> :
         INamedServiceEnvelope<TKey>
     {
         /// <summary>
@@ -34,6 +34,6 @@ namespace DependencyInjectionNamedExtensions
             TKey key,
             Type serviceType,
             Func<IServiceProvider, object> implementationFactory) =>
-                (Key, ServiceType, ImplementationFactory) = (key,serviceType, implementationFactory);
+                (Key, ServiceType, ImplementationFactory) = (key, serviceType, implementationFactory);
     }
 }

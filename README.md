@@ -14,13 +14,13 @@ TODO: Add description after final nuget package will be ready
 ## Usage
 
 Register named services with ```IServiceCollection```
-```
+```csharp
 services.AddScoped<IEventBus, AzureServiceBusPersistance, string>("azureServiceBus");
 services.AddScoped<IEventBus, RabbitMQServicePersistance, string>("rabbitMQ");
 ```
 
 Inject ```IServiceProvider``` interface where you need to resolve dependency and call ```GetService``` method with key provided
-```
+```csharp
 var eventBus = serviceProvider.GetService<IEventBus, string>(eventBusKey);
 ```
 

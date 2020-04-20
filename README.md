@@ -9,7 +9,16 @@ Current implementation of .NET Core Dependency Injection container does not supp
 
 ## Installation
 
-TODO: Add description after final nuget package will be ready
+> Currently this version in prerelease state and in testing, you can use it at your own risk. Please feel free to submit an issue.
+
+Package can be found on [Nuget](https://www.nuget.org/packages/DependencyInjectionNamedExtensions/)
+Can be installed via nuget package manager
+
+```Install-Package DependencyInjectionNamedExtensions -Version 1.0.0-beta2```
+
+or .NET CLI
+
+```dotnet add package DependencyInjectionNamedExtensions --version 1.0.0-beta2```
 
 ## Usage
 

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace DependencyInjectionNamedExtensions.Tests.ServiceProviderExtensions
+namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExtensions
 {
     [Trait("Category", "ServiceProviderExtensions")]
     public class ServiceProviderExtensionsTests : IDisposable

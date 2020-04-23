@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace DependencyInjectionNamedExtensions.Tests
+namespace Microsoft.Extensions.NamedDependencyInjection.Tests
 {
     public abstract class ServiceCollectionTestBase
     {

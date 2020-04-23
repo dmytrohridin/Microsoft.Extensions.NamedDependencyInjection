@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DependencyInjectionNamedExtensions.Internal
+namespace Microsoft.Extensions.NamedDependencyInjection.Internal
 {
     /// <summary>
     /// Class that describe key and service factory that should be resolved by key

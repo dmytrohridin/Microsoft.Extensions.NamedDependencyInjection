@@ -11,11 +11,11 @@ Current implementation of .NET Core Dependency Injection container does not supp
 
 Can be installed via Nuget
 
-```Install-Package DependencyInjectionNamedExtensions -Version 1.0.0-beta2```
+```Install-Package Microsoft.Extensions.NamedDependencyInjection```
 
 or .NET CLI
 
-```dotnet add package DependencyInjectionNamedExtensions --version 1.0.0-beta2```
+```dotnet add package Microsoft.Extensions.NamedDependencyInjection```
 
 ## Usage
 

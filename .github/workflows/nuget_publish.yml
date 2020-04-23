@@ -16,12 +16,12 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Create NuGet Package
-      run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/dmytrohridin/DependencyInjectionNamedExtensions/releases/tag/${{ github.event.release.tag_name }}"
-      working-directory: ./src/DependencyInjectionNamedExtensions 
+      run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/dmytrohridin/Microsoft.Extensions.NamedDependencyInjection/releases/tag/${{ github.event.release.tag_name }}"
+      working-directory: ./src/Microsoft.Extensions.NamedDependencyInjection 
     - name: Archive NuGet Package
       uses: actions/upload-artifact@v1
       with:
-        name: DependencyInjectionNamedExtensions
-        path: ./src/DependencyInjectionNamedExtensions/bin/Release/DependencyInjectionNamedExtensions.${{ github.event.release.tag_name }}.nupkg
+        name: Microsoft.Extensions.NamedDependencyInjection
+        path: ./src/Microsoft.Extensions.NamedDependencyInjection/bin/Release/Microsoft.Extensions.NamedDependencyInjection.${{ github.event.release.tag_name }}.nupkg
     - name: Publish Nuget Package
       run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_DEPLOY_KEY }} --source https://api.nuget.org/v3/index.json --no-symbols true

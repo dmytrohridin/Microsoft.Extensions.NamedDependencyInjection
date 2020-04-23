@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Microsoft.Extensions.NamedDependencyInjection</RootNamespace>
     <PublisherName>Dmytro Hridin</PublisherName>
-    <PackageId>Microsoft.Extensions.DependencyInjection.NamedDependencies</PackageId>
+    <PackageId>DependencyInjection.Extensions.NamedDependencies</PackageId>
     <Version>1.0.0.0</Version>
     <Copyright>Dmytro Hridin 2020</Copyright>
     <Title>Microsoft Dependency Injection Extensions</Title>

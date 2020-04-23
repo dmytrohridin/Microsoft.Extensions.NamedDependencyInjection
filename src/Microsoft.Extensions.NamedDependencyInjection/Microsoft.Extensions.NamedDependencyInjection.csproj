@@ -11,10 +11,10 @@
     <Description>Extensions for Microsoft Dependency Injection container that allow to register and resolve dependencies by key</Description>
     <Authors>Dmytro Hridin</Authors>
     <PackageTags>AspNetCore;.NET Core DI</PackageTags>
-    <PackageProjectUrl>https://github.com/dmytrohridin/DependencyInjectionNamedExtensions</PackageProjectUrl>
-    <PackageLicense>https://github.com/dmytrohridin/DependencyInjectionNamedExtensions/blob/master/LICENSE</PackageLicense>
+    <PackageProjectUrl>https://github.com/dmytrohridin/Microsoft.Extensions.NamedDependencyInjection</PackageProjectUrl>
+    <PackageLicense>https://github.com/dmytrohridin/Microsoft.Extensions.NamedDependencyInjection/blob/master/LICENSE</PackageLicense>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/dmytrohridin/DependencyInjectionNamedExtensions</RepositoryUrl>
+    <RepositoryUrl>git://github.com/dmytrohridin/Microsoft.Extensions.NamedDependencyInjection</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

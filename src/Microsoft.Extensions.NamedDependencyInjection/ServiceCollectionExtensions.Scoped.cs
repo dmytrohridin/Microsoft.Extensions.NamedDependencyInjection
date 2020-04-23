@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using DependencyInjectionNamedExtensions.Internal;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.NamedDependencyInjection.Internal;
 
-namespace DependencyInjectionNamedExtensions
+namespace Microsoft.Extensions.NamedDependencyInjection
 {
     public static partial class ServiceCollectionExtensions
     {

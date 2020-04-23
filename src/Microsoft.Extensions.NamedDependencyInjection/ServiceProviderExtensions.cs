@@ -1,9 +1,9 @@
-﻿using DependencyInjectionNamedExtensions.Internal;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.NamedDependencyInjection.Internal;
 
-namespace DependencyInjectionNamedExtensions
+namespace Microsoft.Extensions.NamedDependencyInjection
 {
     public static class ServiceProviderExtensions
     {

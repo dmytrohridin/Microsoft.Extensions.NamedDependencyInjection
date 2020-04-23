@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
 
-    <RootNamespace>DependencyInjectionNamedExtensions.Tests</RootNamespace>
+    <RootNamespace>Microsoft.Extensions.NamedDependencyInjection.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DependencyInjectionNamedExtensions\DependencyInjectionNamedExtensions.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.NamedDependencyInjection\Microsoft.Extensions.NamedDependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

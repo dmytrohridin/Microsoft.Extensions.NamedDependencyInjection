@@ -2,7 +2,7 @@
 using System.Linq;
 using Xunit;
 
-namespace DependencyInjectionNamedExtensions.Tests
+namespace Microsoft.Extensions.NamedDependencyInjection.Tests
 {
     [Trait("Category", "ServiceCollection")]
     public class ServiceCollectionExtensionsSingletonTests : ServiceCollectionTestBase

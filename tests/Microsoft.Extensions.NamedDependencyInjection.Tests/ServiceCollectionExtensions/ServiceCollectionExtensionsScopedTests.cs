@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
+﻿using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace DependencyInjectionNamedExtensions.Tests
+namespace Microsoft.Extensions.NamedDependencyInjection.Tests
 {
     [Trait("Category", "ServiceCollection")]
     public class ServiceCollectionExtensionsScopedTests : ServiceCollectionTestBase

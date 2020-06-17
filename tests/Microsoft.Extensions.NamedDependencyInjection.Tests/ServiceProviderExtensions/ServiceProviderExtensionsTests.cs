@@ -37,6 +37,16 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
         }
 
         [Fact]
+        public void GetRequiredServiceByServiceTypeReturnValidService()
+        {
+            var serviceA = serviceProvider.GetRequiredService(typeof(IDummyService), DummyServiceConstants.DummyServiceAKey);
+            var serviceB = serviceProvider.GetRequiredService(typeof(IDummyService), DummyServiceConstants.DummyServiceBKey);
+
+            Assert.NotNull(serviceA as DummyServiceA);
+            Assert.NotNull(serviceB as DummyServiceB);
+        }
+
+        [Fact]
         public void GetServiceByInvalidServiceTypeReturnNull()
         {
             var serviceA = serviceProvider.GetService(typeof(DummyServiceA), DummyServiceConstants.DummyServiceAKey);
@@ -44,6 +54,15 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
 
             Assert.Null(serviceA);
             Assert.Null(serviceB);
+        }
+
+        [Fact]
+        public void GetRequiredServiceByInvalidServiceTypeThrowException()
+        {
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService(typeof(DummyServiceA), DummyServiceConstants.DummyServiceAKey));
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService(typeof(DummyServiceB), DummyServiceConstants.DummyServiceBKey));
         }
 
         [Fact]
@@ -57,10 +76,29 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
         }
 
         [Fact]
+        public void GetRequiredServiceByServiceTypeByInvalidKeyThrowException()
+        {
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService(typeof(IDummyService), "non_existing_key_a"));
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService(typeof(IDummyService), "non_existing_key_b"));
+        }
+
+        [Fact]
         public void GetServiceByGenericTypeReturnValidService()
         {
             var serviceA = serviceProvider.GetService<IDummyService, string>(DummyServiceConstants.DummyServiceAKey);
             var serviceB = serviceProvider.GetService<IDummyService, string>(DummyServiceConstants.DummyServiceBKey);
+
+            Assert.NotNull(serviceA as DummyServiceA);
+            Assert.NotNull(serviceB as DummyServiceB);
+        }
+
+        [Fact]
+        public void GetRequiredServiceByGenericTypeReturnValidService()
+        {
+            var serviceA = serviceProvider.GetRequiredService<IDummyService, string>(DummyServiceConstants.DummyServiceAKey);
+            var serviceB = serviceProvider.GetRequiredService<IDummyService, string>(DummyServiceConstants.DummyServiceBKey);
 
             Assert.NotNull(serviceA as DummyServiceA);
             Assert.NotNull(serviceB as DummyServiceB);
@@ -77,6 +115,15 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
         }
 
         [Fact]
+        public void GetRequiredServiceByInvalidGenericTypeThrowException()
+        {
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<DummyServiceA, string>(DummyServiceConstants.DummyServiceAKey));
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<DummyServiceB, string>(DummyServiceConstants.DummyServiceBKey));
+        }
+
+        [Fact]
         public void GetServiceByGenericTypeByInvalidKeyReturnNull()
         {
             var serviceA = serviceProvider.GetService<IDummyService, string>("non_existing_key_a");
@@ -87,11 +134,32 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
         }
 
         [Fact]
+        public void GetRequiredServiceByGenericTypeByInvalidKeyThrowException()
+        {
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<IDummyService, string>("non_existing_key_a"));
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<IDummyService, string>("non_existing_key_b"));
+        }
+
+        [Fact]
         public void GetServiceByGenericTypeKeyComparerReturnValidService()
         {
             var serviceA = serviceProvider.GetService<IDummyService, string>(
                 key => key == DummyServiceConstants.DummyServiceAKey);
             var serviceB = serviceProvider.GetService<IDummyService, string>(
+                key => key == DummyServiceConstants.DummyServiceBKey);
+
+            Assert.NotNull(serviceA as DummyServiceA);
+            Assert.NotNull(serviceB as DummyServiceB);
+        }
+
+        [Fact]
+        public void GetRequiredServiceByGenericTypeKeyComparerReturnValidService()
+        {
+            var serviceA = serviceProvider.GetRequiredService<IDummyService, string>(
+                key => key == DummyServiceConstants.DummyServiceAKey);
+            var serviceB = serviceProvider.GetRequiredService<IDummyService, string>(
                 key => key == DummyServiceConstants.DummyServiceBKey);
 
             Assert.NotNull(serviceA as DummyServiceA);
@@ -111,6 +179,17 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
         }
 
         [Fact]
+        public void GetRequiredServiceByInvalidGenericTypeKeyComparerThrowException()
+        {
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<DummyServiceA, string>(
+                    key => key == DummyServiceConstants.DummyServiceAKey));
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<DummyServiceB, string>(
+                    key => key == DummyServiceConstants.DummyServiceBKey));
+        }
+
+        [Fact]
         public void GetServiceByGenericTypeByInvalidKeyComparerReturnNull()
         {
             var serviceA = serviceProvider.GetService<IDummyService, string>(key => key == "non_existing_key_a");
@@ -121,6 +200,15 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
         }
 
         [Fact]
+        public void GetRequiredServiceByGenericTypeByInvalidKeyComparerThrowException()
+        {
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<IDummyService, string>(key => key == "non_existing_key_a"));
+            Assert.Throws<InvalidOperationException>(() =>
+                serviceProvider.GetRequiredService<IDummyService, string>(key => key == "non_existing_key_b"));
+        }
+
+        [Fact]
         public void GetDifferentServicesWithSameKeysByServiceTypeReturnValidServices()
         {
             var serviceA = serviceProvider.GetService(typeof(IDummyService), DummyServiceConstants.DummyServiceAKey);
@@ -128,6 +216,21 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
 
             var anotherServiceA = serviceProvider.GetService(typeof(IAnotherDummyService), DummyServiceConstants.DummyServiceAKey);
             var anotherServiceB = serviceProvider.GetService(typeof(IAnotherDummyService), DummyServiceConstants.DummyServiceBKey);
+
+            Assert.NotNull(serviceA as DummyServiceA);
+            Assert.NotNull(serviceB as DummyServiceB);
+            Assert.NotNull(anotherServiceA as AnotherDummyServiceA);
+            Assert.NotNull(anotherServiceB as AnotherDummyServiceB);
+        }
+
+        [Fact]
+        public void GetDifferentRequiredServicesWithSameKeysByServiceTypeReturnValidServices()
+        {
+            var serviceA = serviceProvider.GetRequiredService(typeof(IDummyService), DummyServiceConstants.DummyServiceAKey);
+            var serviceB = serviceProvider.GetRequiredService(typeof(IDummyService), DummyServiceConstants.DummyServiceBKey);
+
+            var anotherServiceA = serviceProvider.GetRequiredService(typeof(IAnotherDummyService), DummyServiceConstants.DummyServiceAKey);
+            var anotherServiceB = serviceProvider.GetRequiredService(typeof(IAnotherDummyService), DummyServiceConstants.DummyServiceBKey);
 
             Assert.NotNull(serviceA as DummyServiceA);
             Assert.NotNull(serviceB as DummyServiceB);
@@ -151,6 +254,21 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
         }
 
         [Fact]
+        public void GetDifferentRequiredServicesWithSameKeysByGenericTypeReturnValidServices()
+        {
+            var serviceA = serviceProvider.GetRequiredService<IDummyService, string>(DummyServiceConstants.DummyServiceAKey);
+            var serviceB = serviceProvider.GetRequiredService<IDummyService, string>(DummyServiceConstants.DummyServiceBKey);
+
+            var anotherServiceA = serviceProvider.GetRequiredService<IAnotherDummyService, string>(DummyServiceConstants.DummyServiceAKey);
+            var anotherServiceB = serviceProvider.GetRequiredService<IAnotherDummyService, string>(DummyServiceConstants.DummyServiceBKey);
+
+            Assert.NotNull(serviceA as DummyServiceA);
+            Assert.NotNull(serviceB as DummyServiceB);
+            Assert.NotNull(anotherServiceA as AnotherDummyServiceA);
+            Assert.NotNull(anotherServiceB as AnotherDummyServiceB);
+        }
+
+        [Fact]
         public void GetDifferentServicesWithSameKeysByGenericTypeKeyComparerReturnValidServices()
         {
             var serviceA = serviceProvider.GetService<IDummyService, string>(
@@ -161,6 +279,25 @@ namespace Microsoft.Extensions.NamedDependencyInjection.Tests.ServiceProviderExt
             var anotherServiceA = serviceProvider.GetService<IAnotherDummyService, string>(
                 key => key == DummyServiceConstants.DummyServiceAKey);
             var anotherServiceB = serviceProvider.GetService<IAnotherDummyService, string>(
+                key => key == DummyServiceConstants.DummyServiceBKey);
+
+            Assert.NotNull(serviceA as DummyServiceA);
+            Assert.NotNull(serviceB as DummyServiceB);
+            Assert.NotNull(anotherServiceA as AnotherDummyServiceA);
+            Assert.NotNull(anotherServiceB as AnotherDummyServiceB);
+        }
+
+        [Fact]
+        public void GetDifferentRequiredServicesWithSameKeysByGenericTypeKeyComparerReturnValidServices()
+        {
+            var serviceA = serviceProvider.GetRequiredService<IDummyService, string>(
+                key => key == DummyServiceConstants.DummyServiceAKey);
+            var serviceB = serviceProvider.GetRequiredService<IDummyService, string>(
+                key => key == DummyServiceConstants.DummyServiceBKey);
+
+            var anotherServiceA = serviceProvider.GetRequiredService<IAnotherDummyService, string>(
+                key => key == DummyServiceConstants.DummyServiceAKey);
+            var anotherServiceB = serviceProvider.GetRequiredService<IAnotherDummyService, string>(
                 key => key == DummyServiceConstants.DummyServiceBKey);
 
             Assert.NotNull(serviceA as DummyServiceA);

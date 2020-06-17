@@ -93,11 +93,8 @@ namespace Microsoft.Extensions.NamedDependencyInjection
         /// <exception cref="InvalidOperationException">There is no service of type serviceType that registered by specified key.</exception>
         public static object GetRequiredService<TKey>(this IServiceProvider serviceProvider, Type serviceType, TKey key)
         {
-            var service = serviceProvider.GetService(serviceType, key);
-            if (service == null)
-            {
-                throw new InvalidOperationException($"No service for type '{serviceType.FullName}' has been registered.");
-            }
+            var service = serviceProvider.GetService(serviceType, key)
+                ?? throw new InvalidOperationException($"No service for type '{serviceType.FullName}' with key '{key}' has been registered.");
             return service;
         }
 

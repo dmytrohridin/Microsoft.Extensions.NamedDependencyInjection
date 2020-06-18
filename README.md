@@ -2,6 +2,7 @@
 Extensions for [.NET Core](https://github.com/dotnet/extensions/) Dependency Injection container, that allow to resolve dependencies by key. 
 
 ![.NET Core](https://github.com/dmytrohridin/DependencyInjectionNamedExtensions/workflows/.NET%20Core/badge.svg?branch=master)
+[![NuGet package](https://badge.fury.io/nu/DependencyInjection.Extensions.NamedDependencies.svg)](https://www.nuget.org/packages/DependencyInjection.Extensions.NamedDependencies/)
 
 ## Why?
 
